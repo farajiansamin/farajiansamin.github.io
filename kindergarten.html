@@ -1,0 +1,1948 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgUFVldbGwEJUlJXBAQDUw==",licenseKey:"e7fb1b89a0",applicationID:"296353545"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(21),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(22),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(w,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(22),a=t(21);e.exports=o;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=o(h,m),v.traceContextStateHeader=i(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",f="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(19),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(21),c=t(22),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],18:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?s("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&s("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&s("lcp",[n[n.length-1]])}function i(t){if(t instanceof u&&!l){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:f.now()-n,l=!0,s("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,c,s=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),c=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),c.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var l=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],19:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],20:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],21:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],22:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],23:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(21),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+b.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-b.offset}var c=(new Date).getTime(),s=t("handle"),f=t(21),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:c,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),s("mark",["firstbyte",c],null,"api");var E=0,R=t(23)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name=keywords  content="samin farajian" />
+      <meta name=description  content="Designing preschool complex for blind children  " />
+      <meta name=twitter:card  content="summary_large_image" />
+      <meta name=twitter:site  content="@AdobePortfolio" />
+      <meta  property=og:title content="Samin Farajian - The Bright Way" />
+      <meta  property=og:description content="Designing preschool complex for blind children  " />
+      <meta  property=og:image content="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5495ffc1-4a29-429b-ab56-5692858a50c0_rwc_170x148x798x599x798.jpg?h=692aa4ff6e79dea5883fc2ecddc2fe41" />
+      <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUxpcU3H2DoAAAABdFJOUwBA5thmAAAADElEQVQI12NgIA0AAAAwAAHHqoWOAAAAAElFTkSuQmCC"  />
+      <link rel="stylesheet" href="dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/21798520bb04dbe5a57be650ca3afec41596998660.css?h=33eb1b6b7b521c9702cd8af33e38f1d2" type="text/css" />
+    <link rel="canonical" href="kindergarten.html" />
+      <title>Samin Farajian - The Bright Way</title>
+    <script type="text/javascript" src="https://use.typekit.net/ik/6bilxafF4cmheCBV2D3LK7b8FoQOHbfbPQA4nHLTqntfelJgfHYEBsJzwD9oFDIDWDwXZeb3wc4KFAmqjAjhFhJtFcjuwRB85AFywQs8ZQ4cw29owQjXZAw-mkG0dW83da4XZcNC-Av0jhNlOfG0SY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPUlpWgzS1scdhUTdkoRdhXCSY4zwKuh-AmaOcuoSeNkieZzde8zOcFzdPJIZc4cifG4f5NRIMMjMkMfH6qJvewbMg6IJMJ7fbRUjUMMeM96MKG4fV4RIMMjgkMfH6qJvhwbMg64JMHbMdcb0FMB.js?cb=60244d56aa9a6a5886e0272e6ea0d3cc6dfd5710" async onload="
+    try {
+      window.Typekit.load();
+    } catch (e) {
+      console.warn('Typekit not loaded.');
+    }
+    "></script>
+</head>
+        <body class="transition-enabled">  <div class='page-background-video page-background-video-with-panel'>
+  </div>
+  <div class="js-responsive-nav">
+    <div class="responsive-nav has-social">
+      <div class="responsive-nav__contents">
+        <div class="close-responsive-click-area js-close-responsive-nav">
+          <div class="close-responsive-button"></div>
+        </div>
+            <nav class="nav-container js-editable-target editable" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="welcome.html" >About</a>
+      </div>
+                <div class="gallery-title"><a href="work.html" >Works</a></div>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+            </nav>
+          <div class="social pf-nav-social js-editable-target editable" data-context="theme.nav" data-section="Social Icons" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+            <ul>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-wrap cfix">
+    <div class="site-container">
+      <div class="site-content e2e-site-content">
+          <header class="site-header js-site-header js-editable-target editable  js-editable-target editable" data-context="theme.nav" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+              <nav class="nav-container js-editable-target editable" data-hover-hint="nav" data-hover-hint-placement="bottom-start">
+      <div class="page-title">
+        <a href="welcome.html" >About</a>
+      </div>
+                <div class="gallery-title"><a href="work.html" >Works</a></div>
+      <div class="page-title">
+        <a href="contact.html" >Contact</a>
+      </div>
+              </nav>
+              <div class="logo-wrap js-editable-target editable" data-context="theme.logo.header" data-hover-hint="logo" data-hover-hint-placement="bottom-start">
+                <div class="logo e2e-site-logo-text logo-text  ">
+                    <a href="work.html" class="preserve-whitespace">Samin Farajian</a>
+
+                </div>
+              </div>
+              <div class="social pf-nav-social js-editable-target editable" data-context="theme.nav" data-section="Social Icons" data-hover-hint="navSocialIcons" data-hover-hint-placement="bottom-start">
+                <ul>
+                </ul>
+              </div>
+              <div class="hamburger-click-area js-hamburger">
+                <div class="hamburger">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+              </div>
+          </header>
+        <main>
+  <div class="page-container js-site-wrap js-editable-target editable" data-context="page.page.container" data-hover-hint="pageContainer">
+    <section class="page standard-modules">
+        <header class="page-header content js-editable-target editable" data-context="pages" data-identity="id:p5f0cb638d4162c8427c9a9c08f50c588c65a0b463a1510ac21c1f" data-hover-hint="pageHeader" data-hover-hint-id="p5f0cb638d4162c8427c9a9c08f50c588c65a0b463a1510ac21c1f">
+            <h1 class="title preserve-whitespace e2e-site-logo-text">The Bright Way</h1>
+            <p class="description">Designing preschool complex for blind children  </p>
+        </header>
+      <div class="page-content js-page-content js-editable-target editable" data-context="pages" data-identity="id:p5f0cb638d4162c8427c9a9c08f50c588c65a0b463a1510ac21c1f" data-section="Page Info">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 93px;
+  width: 70%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/026ee8fb-2583-43b3-abdc-ca179f537537.jpg?h=13e85bdb2b6b9d5794a849fd0db9fdbc">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/026ee8fb-2583-43b3-abdc-ca179f537537_rw_1200.jpg?h=51a5fe7ed14d69f764381e8d56cf6f7a"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/026ee8fb-2583-43b3-abdc-ca179f537537_rw_600.jpg?h=a008913e288966de2d5f32736e132f9e 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/026ee8fb-2583-43b3-abdc-ca179f537537_rw_1200.jpg?h=51a5fe7ed14d69f764381e8d56cf6f7a 1090w,"
+             data-sizes="(max-width: 1090px) 100vw, 1090px"
+             width="1090"
+             height="0"
+             style="padding-bottom: 68%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#a0a0a0;" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:500;"><span style="font-size:24px;" class="texteditor-inline-fontsize">About:</span></span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">Designing preschool complex for blind children with the approach of blind kids communication with the environment and improving children's cognitive development.</span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">Supervisor: Dr. Hamed Mazaherian</span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">The Final Project of My Undergraduate studies</span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><br></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:18px;"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:500;">Some of the problems that blind people face in youth and adulthood are because of the absence of appropriate and in time education and training in childhood. In this respect, pre-school education is so important for these kids. Ignoring the importance of training at this critical time, when the emotional, mental, physical and personality growth of the child is so important, can cause additional problems such as the mental retardation, forgetfulness, lack of physical strength, lack of concentration in perception and expression and inappropriate social behavior. Undoubtedly expecting the child behavior to be modified only at school time is impossible and cause educational and social failure in the future.</span></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:24px;"><span style="font-family:fbft; font-weight:700;">Challenges:</span></span></div><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:400;"><span style="color:#333333;" class="texteditor-inline-color">How can blind children be prepared for engaging in society in their future?</span></span></span></div><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:400;"><span style="color:#333333;" class="texteditor-inline-color">How can environmental design help blind children feeling independent and boost their self-confidence? </span></span></span></div><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:400;"><span style="color:#333333;" class="texteditor-inline-color">How environmental design can help us to provide a suitable place for developing blind children's mental and physical health and encourage them to gain experiences in the environment?</span></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="text-align:left;" class="sub-title"><div style="line-height:26px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:24px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:700;">Solution :</span></span></div><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:400;"><span style="color:#333333;" class="texteditor-inline-color"><span class="texteditor-inline-fontsize">To face mentioned challenges, one of the pre-schools (Narjes preschool complex for blind kids) has been redesigned trying to define a new pattern with the approach of blind children communication with the environment; with this in mind that design should match the training requirements of the kids and make an effective relationship between kids and pre-school's environment. As a result, we could have a suitable environment where children with visual disabilities can feel secure and peaceful. so their curiosity starts to grow, and through different experiences, we can stimulate their other senses in the absence of their visual perception.</span> </span></span></span></div></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 30px;
+  padding-bottom: 20px;
+  width: 64%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/348dffbf-07cf-409d-8599-2c129297356f.png?h=3268bcbaf8020b13d626e0d81f81b2d3">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/348dffbf-07cf-409d-8599-2c129297356f_rw_1200.png?h=b9a31d49764d94a92e5f7ca26f4a5b02"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/348dffbf-07cf-409d-8599-2c129297356f_rw_600.png?h=75931cda0286b2a5ce54fea7f86a28b5 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/348dffbf-07cf-409d-8599-2c129297356f_rw_1200.png?h=b9a31d49764d94a92e5f7ca26f4a5b02 1155w,"
+             data-sizes="(max-width: 1155px) 100vw, 1155px"
+             width="1155"
+             height="0"
+             style="padding-bottom: 59.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 48px;
+  padding-bottom: 85px;
+  width: 59%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/0e17b883-20aa-4bb5-bef9-dd70bc7e7650.jpg?h=19528d7f760c031eb83a6cebb1aa679d">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/0e17b883-20aa-4bb5-bef9-dd70bc7e7650_rw_1200.jpg?h=848bb738d75d540256e3e39c20acdf76"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/0e17b883-20aa-4bb5-bef9-dd70bc7e7650_rw_600.jpg?h=ff3dcd2c3b0f24976b0e248a6455cadd 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/0e17b883-20aa-4bb5-bef9-dd70bc7e7650_rw_1200.jpg?h=848bb738d75d540256e3e39c20acdf76 1200w,"
+             data-sizes="(max-width: 1200px) 100vw, 1200px"
+             width="1200"
+             height="0"
+             style="padding-bottom: 55.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 77px;
+  width: 59%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b1056720-4468-420d-ae01-05e0c7b425bb.jpg?h=018bb020c9666cbd61bd1b7a442c8b0d">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b1056720-4468-420d-ae01-05e0c7b425bb_rw_1920.jpg?h=d3c1d2d042e5c9fd3a373780731ae69f"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b1056720-4468-420d-ae01-05e0c7b425bb_rw_600.jpg?h=fc070ad79c02b1ffcaee2179f3ad9e47 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b1056720-4468-420d-ae01-05e0c7b425bb_rw_1200.jpg?h=d5fba550347c98151186f310a6f0f555 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b1056720-4468-420d-ae01-05e0c7b425bb_rw_1920.jpg?h=d3c1d2d042e5c9fd3a373780731ae69f 1296w,"
+             data-sizes="(max-width: 1296px) 100vw, 1296px"
+             width="1296"
+             height="0"
+             style="padding-bottom: 57.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:23px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:24px;" class="texteditor-inline-fontsize"><span style="color:#a0a0a0;" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:700;">The Process</span></span></span></div><div style="line-height:23px; text-align:left;" class="texteditor-inline-lineheight"><br></div><div style="line-height:24px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:400;">In order to gain a better understanding of children with visual disabilities and their situations, I spent time visiting blind kids kindergartens, observing children from near and sketching when It was necessary.<br>Then I conducted user interviews with visually impaired kids, teachers, and parents.</span></span></span></div><div style="line-height:28px; text-align:left;" class="texteditor-inline-lineheight"><br><span style="font-size:21px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:500;"><span style="color:#333333;" class="texteditor-inline-color">My main research questions were to find out</span></span><span style="font-family:fbft; font-weight:400;"><span style="color:#333333;" class="texteditor-inline-color">:</span></span></span><br><span style="color:#787878;" class="texteditor-inline-color"><span class="texteditor-inline-fontsize"><span style="font-size:20px;">1. What are the main activities children enjoy joining at the kindergarten</span></span></span><br><span style="color:#787878;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">2. What is interesting for them and what makes them anxious</span></span><br><span style="color:#787878;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">3. How children are independent in doing different tasks and what is the role of the teachers and their presence.</span></span><br><span style="color:#787878;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">4. What should be taught in a pre-school for visually impaired kids and what are the best teaching methods.</span></span></div><div style="line-height:28px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#787878;" class="texteditor-inline-color"><span style="font-size:20px;"><span class="texteditor-inline-color">5. H</span>ow children act when exploring new environments</span></span></div><div style="line-height:28px; text-align:left;" class="texteditor-inline-lineheight"><br><span style="font-size:20px;" class="texteditor-inline-fontsize"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:500;">Some useful insights I discovered</span>:</span></span><br><span style="color:#787878;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">1. Blind children usually prefer not to get help from others for navigation in the environment, they also refuse to use a cane for navigation because they consider it a weakness and they do not want to show their weakness to others.<br>2. Visually impaired and blind children have a great ability in using their <br> other sensory receptors in the absence of their vision. <br>3. Children feel happier when they can play a game well and feel independent.<br>4. Blind and visually impaired kids usually prefer less dynamic activities but they can enjoy dynamic activities like running and jumping when they are familiar with the environment.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 20px;
+  padding-bottom: 8px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px;text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">With the insight gained from the interviews, I put together a persona to represent my target user.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 43%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b0c1d9dc-71c0-4c41-b6c6-9af56a6de561.png?h=41eb2873bfe5652bf870ab317b0bcbae">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b0c1d9dc-71c0-4c41-b6c6-9af56a6de561_rw_1200.png?h=9e1c16b3e8ed6210265361e59f9dfe78"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b0c1d9dc-71c0-4c41-b6c6-9af56a6de561_rw_600.png?h=cfef79eb99899e876eb7265951b6342d 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b0c1d9dc-71c0-4c41-b6c6-9af56a6de561_rw_1200.png?h=9e1c16b3e8ed6210265361e59f9dfe78 721w,"
+             data-sizes="(max-width: 721px) 100vw, 721px"
+             width="721"
+             height="0"
+             style="padding-bottom: 83.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><p><br></p><div style="line-height:17px" class="texteditor-inline-lineheight"><br></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 0px;
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:20px;"><span style="color:#333333;" class="texteditor-inline-color">Then I started gathering information by reading articles and comparing different buildings and staffs designed for visually impaired and blind children .Finally I defined the goals and ways.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 54%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a.png?h=fa9c8be48dd7be80149e0c75a0bf8e22">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a_rw_3840.png?h=b45deb9e7bc0ec2d6d63899c501e9f2c"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a_rw_600.png?h=84886469c8b1591644b25b82249330d6 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a_rw_1200.png?h=a69ff15eea04141d334a039977dee00f 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a_rw_1920.png?h=4c0cad99ab5a996f58c71706efe8fedc 1920w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5367771d-31f6-4db8-a9d1-f2c1f557c49a_rw_3840.png?h=b45deb9e7bc0ec2d6d63899c501e9f2c 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 70.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><p><br></p><div style="line-height:17px" class="texteditor-inline-lineheight"><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#8f8c8c;"><span class="texteditor-inline-fontsize" style="font-size:16px;">Defining the goals of the project</span></span></span></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 93px;
+  padding-bottom: 25px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:23px; text-align:center;" class="texteditor-inline-lineheight"><span style="font-family:fbft; font-weight:700;"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:20px;" class="texteditor-inline-fontsize">The design process is based on a scenario of a blind child 's journey in kindergarten, from the moment it arrives in kindergarten to the moment it lefts.</span></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 33px;
+  width: 65%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb.png?h=303ba7a69e0730704d47495c709034b7">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb_rw_3840.png?h=fe5bc9513f90c9b00a28db79ba532faa"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb_rw_600.png?h=f0ce3a2205cba94a5f488002c0f4a0af 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb_rw_1200.png?h=0337a05c8e9c3094be92e047b4de64a5 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb_rw_1920.png?h=04b4495ea5a49789856a28036eb0ed63 1920w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/49dcc9fb-8669-48a3-b738-c801546e38eb_rw_3840.png?h=fe5bc9513f90c9b00a28db79ba532faa 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 56.33%; background: rgba(0, 0, 0, 0.03)"
+              alt="Ground floor plan"
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><p><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#787878;"><span class="texteditor-inline-fontsize" style="font-size:16px;">Ground floor Plan</span></span></span></p></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="text-align:left;"><span style="color:#919191;" class="texteditor-inline-color"><span style="font-size:24px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:700;">First, The Main entrance: </span></span></span></div><div style="line-height:22px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:18px;"><span style="color:#333333;" class="texteditor-inline-color">At the main entrance, children are guided by the smell of fragrant flowers, reducing path width, and bumps on the surface of the walls. Moreover, the roof of the entrance is designed lattice. so entrance is bright enough and with the companion of yellow color on the ground, it has become easy to recognize for visually impaired children.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 38px;
+  padding-bottom: 0px;
+  width: 39%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/3998e1a3-6535-441f-9550-34552cd7fb4e.jpg?h=d4774145357d4884b65e9e64295fda41">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/3998e1a3-6535-441f-9550-34552cd7fb4e_rw_1200.jpg?h=ce700a39ec9e15fe6338cb99160400c2"
+             data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/3998e1a3-6535-441f-9550-34552cd7fb4e_rw_600.jpg?h=549aa2ada4961386a3992e3adac9568b 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/3998e1a3-6535-441f-9550-34552cd7fb4e_rw_1200.jpg?h=ce700a39ec9e15fe6338cb99160400c2 637w,"
+             data-sizes="(max-width: 637px) 100vw, 637px"
+             width="637"
+             height="0"
+             style="padding-bottom: 70.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><p><br></p><div style="line-height:22px; text-align:left" class="texteditor-inline-lineheight"><br></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 3px;
+  width: 49%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24.png?h=dc6128267c530eb9f610a7a43460a40f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24_rw_3840.png?h=a06e733cac44d1dd3c60570d5f8a2bf8"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24_rw_600.png?h=791956d0f2fef4443b769039270b4923 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24_rw_1200.png?h=f359f1393412b56a61c425840e0d8d92 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24_rw_1920.png?h=f6ac051f2164d50f2dd5b91a06ea43b7 1920w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/1e6b1eff-1d8a-4dc7-8482-cd4885ef5f24_rw_3840.png?h=a06e733cac44d1dd3c60570d5f8a2bf8 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 76%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div style="line-height:20px;" class="texteditor-inline-lineheight"><span style="color:#333333" class="texteditor-inline-color"><span style="font-size:20px" class="texteditor-inline-fontsize"><span class="texteditor-inline-fontsize" style="font-size:18px;">To lead a blind child in a certain direction and to help it obviating the need for a cane to navigate, bumps can be pushed back and forth to create a distance to the wall surface.</span></span></span><br></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module tree project-module-tree editable js-editable js-project-module e2e-site-project-module-tree" >
+  <div class="tree-wrapper valign-top">
+      <div class="tree-child-wrapper" style="flex: 99">
+        
+        <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 49px;
+  width: 97%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac.png?h=83a48698fc6fbb81df5b1bceae896066">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac_rw_3840.png?h=e7ad74d8a4f01452521b2e9859743f5f"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac_rw_600.png?h=12e316eb5d83807c4be0490964a81053 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac_rw_1200.png?h=6c050034c2a1b7e1eba9d5c1667ecf8e 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac_rw_1920.png?h=9102379513b076b8de553f4379b09d2f 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/73f51d4a-ee88-4c68-bcbd-8325d45895ac_rw_3840.png?h=e7ad74d8a4f01452521b2e9859743f5f 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 66.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div style="line-height:22px;text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:18px" class="texteditor-inline-fontsize"><span style="color:#333333" class="texteditor-inline-color">Near the main entrance, children can walk to the backyard, guided by the sound of water and touching the grass with their feet. The corridor is also designed in a way that visually impaired children recognize the periodic shadows of the columns and are directed in the correct path.</span></span></div></div>
+    </div>
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <div class="tree-child-wrapper" style="flex: 101">
+        
+        <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 59px;
+  padding-bottom: 20px;
+  width: 96%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4462fe51-c9de-4327-b4f3-bbf2d567dddd.jpg?h=1c1bc7322102cc2d516bee4b0d6c3498">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4462fe51-c9de-4327-b4f3-bbf2d567dddd_rw_1200.jpg?h=8a64144a03a16b3ef6a3edb5e5bb5ed4"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4462fe51-c9de-4327-b4f3-bbf2d567dddd_rw_600.jpg?h=ed6259bcf373a1163378121c939c821f 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4462fe51-c9de-4327-b4f3-bbf2d567dddd_rw_1200.jpg?h=8a64144a03a16b3ef6a3edb5e5bb5ed4 652w,"
+             data-sizes="(max-width: 652px) 100vw, 652px"
+             width="652"
+             height="0"
+             style="padding-bottom: 73.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+        
+        
+        
+        
+        
+        
+        
+      </div>
+  </div>
+</div>
+
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 16px;
+  padding-bottom: 0px;
+  width: 67%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4437ba9b-2d40-4493-813c-2bc25ed95950.jpg?h=8b78491317f845594e26fec42597b0bf">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4437ba9b-2d40-4493-813c-2bc25ed95950_rw_1920.jpg?h=ff05c991d311e99d3c2eb113ce10342d"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4437ba9b-2d40-4493-813c-2bc25ed95950_rw_600.jpg?h=6e530fe94a070cbc2951924603dacb37 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4437ba9b-2d40-4493-813c-2bc25ed95950_rw_1200.jpg?h=3982c6432a72d93d421cec7b6c2987c3 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4437ba9b-2d40-4493-813c-2bc25ed95950_rw_1920.jpg?h=ff05c991d311e99d3c2eb113ce10342d 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 59%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><p><br></p></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 0px;
+  padding-bottom: 32px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="text-align:left;"><span style="font-size:24px;" class="texteditor-inline-fontsize"><span style="color:#919191;" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:700;">After the entrance, they reach the shoe-racks </span></span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-family:fbft; font-weight:400;"><span style="font-size:18px;" class="texteditor-inline-fontsize"><span style="color:#333333;" class="texteditor-inline-color">Although the easiest way is to consider a fixed place on the shoe racks for each child, here the main purpose is to engage the children’s mind with the same everyday issues during their presence at the preschool environment and increase their sense of responsibility. so it is recommended to ask children to remember the exact location of their shoes every day. For this purpose, racks are specified by the numbers of their rows and columns and coded with elements behind the surface of each floor. It also helps to familiarize the child with the concept of rows and columns.</span></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/eae2a0f9-c0d4-44be-9db9-2c2e9d2078ec.jpg?h=f201cb7b7a65559909dce1fc446f4156">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/eae2a0f9-c0d4-44be-9db9-2c2e9d2078ec_rw_1200.jpg?h=2b53f40211dc45fb16f2dfdb4429eed2"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/eae2a0f9-c0d4-44be-9db9-2c2e9d2078ec_rw_600.jpg?h=e2d95c3e3e264ddf981ebdd93b0a9fdd 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/eae2a0f9-c0d4-44be-9db9-2c2e9d2078ec_rw_1200.jpg?h=2b53f40211dc45fb16f2dfdb4429eed2 604w,"
+             data-sizes="(max-width: 604px) 100vw, 604px"
+             width="604"
+             height="0"
+             style="padding-bottom: 67.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 32px;
+  padding-bottom: 0px;
+  width: 51%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="font-size:18px;" class="texteditor-inline-fontsize"><span style="color:#333333;" class="texteditor-inline-color">Since it is not hygienically suitable to touch the surface of a shoe rack, floors have been considered that can be opened and closed.By touching the holder rod in front of each floor, children can be informed whether a floor is empty or not to put their shoes on it.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 26px;
+  padding-bottom: 66px;
+  width: 40%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8.png?h=9b8b1986c56ea34e7b4b0694a65978dd">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8_rw_3840.png?h=d2da5da39f5aad5041d73ecdea4a3045"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8_rw_600.png?h=ada3fa5a96be3a0aacd861acb0e33e70 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8_rw_1200.png?h=0f3c873c61db4c8b95087ff900a30ac1 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8_rw_1920.png?h=5af2d1e8fcebd829e28d7ae7c83263f7 1920w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/28a9b69a-a786-4bb6-b419-69a1fd7b87e8_rw_3840.png?h=d2da5da39f5aad5041d73ecdea4a3045 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 41.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 0px;
+  padding-bottom: 19px;
+  width: 46%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:18px;"><span style="color:#333333;" class="texteditor-inline-color">Behind the shoe rack, there is a window, which is covered with closed floors. by opening each floor, the room will get more light. so visually impaired children can be informed about the numbers of their friends in the kindergarten. the more light in the room means there are more kids in the kindergarten.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 30px;
+  width: 55%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02.png?h=63bbedc578477cd8e4e22ef11c1cfb79">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02_rw_3840.png?h=6f74c094cf48e09a3ccd855e4b469915"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02_rw_600.png?h=8c531d8f62b3b6bcdae06fcd93e7dcd2 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02_rw_1200.png?h=6a6b2cb1d541a68cb5a5379014fc5b13 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02_rw_1920.png?h=6c169ec9039b157f21985cb15ab49d0d 1920w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/f25280b0-df8b-4884-9848-858be24c3a02_rw_3840.png?h=6f74c094cf48e09a3ccd855e4b469915 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 35.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 62px;
+  padding-bottom: 0px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-color" style="color:#8f8c8c;"><span class="texteditor-inline-fontsize" style="font-size:24px;"><span style="font-family:fbft; font-weight:700;">Next to the shoes space is a wardrobe with two goals in mind : </span></span></span></div><div style="line-height:24px;text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">1. The possibility of detecting clothes through its texture and smell.<br>2. Finding the position of the clothes according to the classification (similar to the one applied to the shoe-racks).</span></span><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize"></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 15px;
+  padding-bottom: 0px;
+  width: 48%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/9054561a-2313-441b-8a80-ac2f4305d836.png?h=c71d096b9db380cca20dd5830a8ac797">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/9054561a-2313-441b-8a80-ac2f4305d836_rw_1920.png?h=d51935a3b730d827c686d7b845f7da12"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/9054561a-2313-441b-8a80-ac2f4305d836_rw_600.png?h=9e98d02e20575527ae3b0553c4816f3e 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/9054561a-2313-441b-8a80-ac2f4305d836_rw_1200.png?h=374be57e3c2a2374003508b889620049 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/9054561a-2313-441b-8a80-ac2f4305d836_rw_1920.png?h=d51935a3b730d827c686d7b845f7da12 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 56%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 4px;
+  padding-bottom: 0px;
+  width: 56%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/451aef39-1296-4ed8-a4f7-2fa0cc26e439.png?h=a5d3b636a08fad85815a16ceb5d745c2">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/451aef39-1296-4ed8-a4f7-2fa0cc26e439_rw_1920.png?h=e42ae9285a7ce84170b6e60a4b7f4a02"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/451aef39-1296-4ed8-a4f7-2fa0cc26e439_rw_600.png?h=a7146950c744ee8453d00eaa7e8eb29f 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/451aef39-1296-4ed8-a4f7-2fa0cc26e439_rw_1200.png?h=7f74cfca3f07420270046a3ed3a4103e 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/451aef39-1296-4ed8-a4f7-2fa0cc26e439_rw_1920.png?h=e42ae9285a7ce84170b6e60a4b7f4a02 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 53.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="text-align:left;"><span class="texteditor-inline-fontsize" style="font-size:18px;"><span style="color:#333333;" class="texteditor-inline-color">The protruding form is very useful for introducing the separator plates since it is easily accessible by the child. But due to the possibility of harming the children's hands, it is designed indented.</span></span><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 21px;
+  padding-bottom: 85px;
+  width: 71%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/bd47c5ea-7a1b-4ee1-86df-6aab09311c98.jpg?h=e590c24846ceebe3afeb4eda8ade532b">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/bd47c5ea-7a1b-4ee1-86df-6aab09311c98_rw_1920.jpg?h=49a876a8a72fb569da9738499b256ffe"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/bd47c5ea-7a1b-4ee1-86df-6aab09311c98_rw_600.jpg?h=b3d858f332184b198cc5a355a8159744 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/bd47c5ea-7a1b-4ee1-86df-6aab09311c98_rw_1200.jpg?h=b94c14c3bada09eb57a6caddd2f99be8 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/bd47c5ea-7a1b-4ee1-86df-6aab09311c98_rw_1920.jpg?h=49a876a8a72fb569da9738499b256ffe 1347w,"
+             data-sizes="(max-width: 1347px) 100vw, 1347px"
+             width="1347"
+             height="0"
+             style="padding-bottom: 57%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:20px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#919191;" class="texteditor-inline-color"><span style="font-size:24px;" class="texteditor-inline-fontsize"><span style="font-family:fbft; font-weight:700;">Behind the wearable, They reach the educational place number one</span></span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">All parts have been designed in a way that responds to the needs of Children.they are instructive and stimulate the child's multiple senses. But in general, there is a need for a space for the daily education of children and playing. This space, while needing flexibility for the child's play and education, should also have fixed elements, which will help the child in locating and navigating.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 34px;
+  padding-bottom: 20px;
+  width: 49%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/968fd8db-b915-4b25-b330-795625913b17.jpg?h=fb0ee31a4c19f061e13bb6c32bdd618b">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/968fd8db-b915-4b25-b330-795625913b17_rw_1920.jpg?h=0211e68b36a41f2df83a470425fd4337"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/968fd8db-b915-4b25-b330-795625913b17_rw_600.jpg?h=9761ab041aa50c6854a5e294bffe28c4 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/968fd8db-b915-4b25-b330-795625913b17_rw_1200.jpg?h=e54d194bd94b54df7fd749803318cf06 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/968fd8db-b915-4b25-b330-795625913b17_rw_1920.jpg?h=0211e68b36a41f2df83a470425fd4337 1790w,"
+             data-sizes="(max-width: 1790px) 100vw, 1790px"
+             width="1790"
+             height="0"
+             style="padding-bottom: 43.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 23px;
+  padding-bottom: 5px;
+  width: 45%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b.png?h=c7bcd93f057b8a96ddb22456ce6b6300">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b_rw_3840.png?h=bc3d00ca8955fa7c8b32e47632dddbdc"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b_rw_600.png?h=b6039dff7bad46c9b5d950c0470eddde 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b_rw_1200.png?h=09821de4e5cac2b2fa9982e33a29adc4 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b_rw_1920.png?h=212d2f67e46aacd9053e1a0bc4ec4b6a 1920w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/e8c208c8-6f6e-4050-b515-67172864c62b_rw_3840.png?h=bc3d00ca8955fa7c8b32e47632dddbdc 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 52%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-color" style="color:#333333;"><span class="texteditor-inline-fontsize" style="font-size:18px;">In one of the walls of this section, there is a facility called an embossed painting wall,  on which the children can make their desired shapes with wooden nails.</span></span><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 14px;
+  padding-bottom: 0px;
+  width: 71%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951.jpg?h=8ab06fb2b93642aee58133c09f3ade72">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951_rw_3840.jpg?h=5d43e498c6654181de36bc7f44a7a742"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951_rw_600.jpg?h=a4d0ee5e9dc75dcc91efe4301126e310 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951_rw_1200.jpg?h=a4a4e492611c06177d6166db70f08e52 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951_rw_1920.jpg?h=4b0e1426d14b5aa85ac1405eba0fa1d1 1920w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5d32b3cb-af8e-4120-b969-c54c79661951_rw_3840.jpg?h=5d43e498c6654181de36bc7f44a7a742 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 24.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 125px;
+  padding-bottom: 29px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">facilities are designed in a way that gives the chance to flourish children's creativity; children can get involved in creating the environment. It will also help to boost children 's self- confidence.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 12px;
+  padding-bottom: 110px;
+  width: 50%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/6587565d-8bd4-4ad5-bce5-58b0cc7a11e5.jpg?h=da911c0235936f169739475cb49a8e39">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/6587565d-8bd4-4ad5-bce5-58b0cc7a11e5_rw_1200.jpg?h=4849af34178e10362cb7ec0b21dcfa75"
+             data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/6587565d-8bd4-4ad5-bce5-58b0cc7a11e5_rw_600.jpg?h=9093d9abbb3d72cb076b43206b9dd24a 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/6587565d-8bd4-4ad5-bce5-58b0cc7a11e5_rw_1200.jpg?h=4849af34178e10362cb7ec0b21dcfa75 1124w,"
+             data-sizes="(max-width: 1124px) 100vw, 1124px"
+             width="1124"
+             height="0"
+             style="padding-bottom: 68.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 41px;
+  width: 65%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/af9e92ba-ab70-4ae4-898c-22a4fe22381d.jpg?h=5eb43d6f04dbbdfd11e52ac6a51a6b38">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/af9e92ba-ab70-4ae4-898c-22a4fe22381d_rw_1200.jpg?h=3dd3e2aa1a1487c61186699a1cdab49a"
+             data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/af9e92ba-ab70-4ae4-898c-22a4fe22381d_rw_600.jpg?h=c1ad241a7f5f1f9b93462f356533b342 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/af9e92ba-ab70-4ae4-898c-22a4fe22381d_rw_1200.jpg?h=3dd3e2aa1a1487c61186699a1cdab49a 1200w,"
+             data-sizes="(max-width: 1200px) 100vw, 1200px"
+             width="1200"
+             height="0"
+             style="padding-bottom: 21.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 80px;
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-fontsize" style="font-size:24px;"><span style="font-family:fbft; font-weight:500;"><span style="color:#787878;" class="texteditor-inline-color">In front of the wardrobe is a bathroom and next to it they will reach a kitchen.</span></span></span></div><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">The main idea is that children do their personal tasks independently </span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 48px;
+  width: 44%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/26b9f285-876d-42a1-b3b3-7ca6185bb20e.jpg?h=1ecd99dbd62c2da4097e6a539d460a30">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/26b9f285-876d-42a1-b3b3-7ca6185bb20e_rw_1200.jpg?h=12b9b05c196f020034a20002afa80984"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/26b9f285-876d-42a1-b3b3-7ca6185bb20e_rw_600.jpg?h=51e7d13c034f7f4b524a070899799505 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/26b9f285-876d-42a1-b3b3-7ca6185bb20e_rw_1200.jpg?h=12b9b05c196f020034a20002afa80984 670w,"
+             data-sizes="(max-width: 670px) 100vw, 670px"
+             width="670"
+             height="0"
+             style="padding-bottom: 66%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 48px;
+  padding-bottom: 62px;
+  width: 36%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fce85e3e-f271-4ead-b4cb-386571797b53.png?h=e337bbd632e4287eb92ded81f74737a4">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fce85e3e-f271-4ead-b4cb-386571797b53_rw_1920.png?h=bd9fd2cd9918e7005d86c751974bb67b"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fce85e3e-f271-4ead-b4cb-386571797b53_rw_600.png?h=d4fe1fc22e5fa30ce2cbc57cb3233fce 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fce85e3e-f271-4ead-b4cb-386571797b53_rw_1200.png?h=b0611a644afc4dbc0ae738feb43d069f 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fce85e3e-f271-4ead-b4cb-386571797b53_rw_1920.png?h=bd9fd2cd9918e7005d86c751974bb67b 1920w,"
+             data-sizes="(max-width: 1920px) 100vw, 1920px"
+             width="1920"
+             height="0"
+             style="padding-bottom: 53.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 20px;
+  padding-bottom: 41px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:22px; text-align:left;" class="texteditor-inline-lineheight"><span style="color:#333333;" class="texteditor-inline-color"><span style="font-size:18px;" class="texteditor-inline-fontsize">Involving children in simple tasks such as preparing food containers, placing and removing a container of water or fruit from the fridge, and even washing a glass helps to increase their confidence. For this purpose, the conditions should be in a way that does not put children in danger. In addition to the safety, location, and shape of the shelf should be in such a way to prevent the child from being confused while finding the necessary equipment.</span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 20px;
+  width: 43%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/57cbe850-8733-4a85-95de-7c4bc1865c39.jpg?h=98a77010a7c2e1d3fa41d1cbb64b9e43">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/57cbe850-8733-4a85-95de-7c4bc1865c39_rw_1200.jpg?h=1d7c85f4346c34a9f86b690f06637864"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/57cbe850-8733-4a85-95de-7c4bc1865c39_rw_600.jpg?h=4b2636c9a48665688043ccdccd6318d1 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/57cbe850-8733-4a85-95de-7c4bc1865c39_rw_1200.jpg?h=1d7c85f4346c34a9f86b690f06637864 967w,"
+             data-sizes="(max-width: 967px) 100vw, 967px"
+             width="967"
+             height="0"
+             style="padding-bottom: 56%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 37px;
+  padding-bottom: 67px;
+  width: 43%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5e8fc564-3bef-462a-ad38-212ee7b843d5.jpg?h=9f92e3c3da28223ee1e1b97c67b91f4e">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5e8fc564-3bef-462a-ad38-212ee7b843d5_rw_1200.jpg?h=42316eb58e8c6d5ef0f6667a75169842"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5e8fc564-3bef-462a-ad38-212ee7b843d5_rw_600.jpg?h=121cd06304d7c1d0d807899ae9da7760 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5e8fc564-3bef-462a-ad38-212ee7b843d5_rw_1200.jpg?h=42316eb58e8c6d5ef0f6667a75169842 676w,"
+             data-sizes="(max-width: 676px) 100vw, 676px"
+             width="676"
+             height="0"
+             style="padding-bottom: 69.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 73px;
+  width: 54%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/8505c7cf-bc66-4782-8033-edfca3575462.jpg?h=fefaf855f2ef55d63ccb8a22141c008e">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/8505c7cf-bc66-4782-8033-edfca3575462_rw_1920.jpg?h=9b7f4d14329520aa8bbde9961d12144a"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/8505c7cf-bc66-4782-8033-edfca3575462_rw_600.jpg?h=54f9eb23c874a210d10c8289baca3046 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/8505c7cf-bc66-4782-8033-edfca3575462_rw_1200.jpg?h=055dd636392771cb0d9e9568244c6b7a 1200w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/8505c7cf-bc66-4782-8033-edfca3575462_rw_1920.jpg?h=9b7f4d14329520aa8bbde9961d12144a 1296w,"
+             data-sizes="(max-width: 1296px) 100vw, 1296px"
+             width="1296"
+             height="0"
+             style="padding-bottom: 57.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 33px;
+  width: 91%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10.jpg?h=8a7311f887a8976dd9adbe87e659fbb9">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10_rw_3840.jpg?h=4d24c8a22f21d747048e5cb9d2a42a11"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10_rw_600.jpg?h=d68cc78423c9ddf8faff7941fd885ff9 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10_rw_1200.jpg?h=7d585f224b782387c398eccf12883a0c 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10_rw_1920.jpg?h=49c46396307359dbba659c54e806382a 1920w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cf242e79-c2fd-4392-9df7-0b73060afe10_rw_3840.jpg?h=4d24c8a22f21d747048e5cb9d2a42a11 3840w,"
+             data-sizes="(max-width: 3840px) 100vw, 3840px"
+             width="3840"
+             height="0"
+             style="padding-bottom: 34.67%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div style="line-height:20px; text-align:left" class="texteditor-inline-lineheight"><span style="font-size:16px" class="texteditor-inline-fontsize"><span style="color:#8f8c8c" class="texteditor-inline-color"><span style="font-family:fbft; font-weight:500">Children should be given the chance for getting closer to nature.&nbsp;they can play with sands, plant flowers, and interact with animals in the back yard.</span></span></span></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 15px;
+  padding-bottom: 1px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div style="line-height:24px;text-align:left;" class="texteditor-inline-lineheight"><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#787878;"><span class="texteditor-inline-fontsize" style="font-size:24px;"> The Staircase</span></span></span></div><div style="line-height:20px;text-align:left;" class="texteditor-inline-lineheight"><span class="texteditor-inline-color" style="color:#333333;"><span class="texteditor-inline-fontsize" style="font-size:18px;">The attempt was made to use the staircase element in space in a way that, in addition to providing the need for vertical circulation, also led to the creation of special spaces. so the children can have the opportunity to experience the quality of different spaces. <br>For this purpose, below the staircase is a place for children to play, relax, and read books. <br>A child, in addition to being present to its peers and friends, needs a cozy, yet relaxed space where it can nourish its imagination. this place should be designed in such a way that instructor would be able to see children and look after them. </span></span><br></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 32%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/47418286-1082-4ad2-a752-ea5628e836cb.png?h=faffa0598b7c90d971d7c1e9d7251daa">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/47418286-1082-4ad2-a752-ea5628e836cb_rw_1920.png?h=19e65e05d5bc7986dd0b80f160a705bc"
+             data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/47418286-1082-4ad2-a752-ea5628e836cb_rw_600.png?h=211d303da564a0e063f1e74a2f6fcda8 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/47418286-1082-4ad2-a752-ea5628e836cb_rw_1200.png?h=e8fe57e8d0ff15bb5261db3ff55fa17c 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/47418286-1082-4ad2-a752-ea5628e836cb_rw_1920.png?h=19e65e05d5bc7986dd0b80f160a705bc 1766w,"
+             data-sizes="(max-width: 1766px) 100vw, 1766px"
+             width="1766"
+             height="0"
+             style="padding-bottom: 84.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 41px;
+  padding-bottom: 20px;
+  width: 54%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b4a8a83b-c838-462d-baff-5f012df96a12.jpg?h=447ae30b440f7826067bed687d717b67">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b4a8a83b-c838-462d-baff-5f012df96a12_rw_1200.jpg?h=87998df414c1c10a42f6ef08903f6afa"
+             data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b4a8a83b-c838-462d-baff-5f012df96a12_rw_600.jpg?h=ae89a981d00c51cf88331a82de5c4dac 600w,https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b4a8a83b-c838-462d-baff-5f012df96a12_rw_1200.jpg?h=87998df414c1c10a42f6ef08903f6afa 905w,"
+             data-sizes="(max-width: 905px) 100vw, 905px"
+             width="905"
+             height="0"
+             style="padding-bottom: 54.33%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module text project-module-text align- editable js-editable js-project-module e2e-site-project-module-text" style="  padding-top: 81px;
+  padding-bottom: 7px;
+  width: 100%;
+  max-width: 800px;
+  float: center;
+  clear: both;
+">
+  <div class="rich-text js-text-editable module-text"><div class="texteditor-inline-lineheight" style="line-height:24px;text-align:center;"><span class="texteditor-inline-fontsize" style="font-size:22px;"><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#787878;">Going up the stairs, they will reach Educational place number two</span></span></span></div></div>
+</div>
+
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 54%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/221291dd-ea8f-49de-a28f-98b6f93c450a.jpg?h=a128a1e98d6cc8c81bdb67ca842cda4f">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/221291dd-ea8f-49de-a28f-98b6f93c450a_rw_1200.jpg?h=8ad815a0b17cb8bf013966ec7867d721"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/221291dd-ea8f-49de-a28f-98b6f93c450a_rw_600.jpg?h=7a47fe96a93e4c6f505b484069a45db1 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/221291dd-ea8f-49de-a28f-98b6f93c450a_rw_1200.jpg?h=8ad815a0b17cb8bf013966ec7867d721 1200w,"
+             data-sizes="(max-width: 1200px) 100vw, 1200px"
+             width="1200"
+             height="0"
+             style="padding-bottom: 55.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 27px;
+  padding-bottom: 20px;
+  width: 56%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5c1e7d5f-0d09-45fd-a8ae-69827ac3a174.jpg?h=e1c2e1d02f5a4900bd4c40781e491feb">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5c1e7d5f-0d09-45fd-a8ae-69827ac3a174_rw_1920.jpg?h=722c659e0a7f8e0dd0ebbe1c08dcf777"
+             data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5c1e7d5f-0d09-45fd-a8ae-69827ac3a174_rw_600.jpg?h=5b11364c09a680066fba12b8300ae409 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5c1e7d5f-0d09-45fd-a8ae-69827ac3a174_rw_1200.jpg?h=a8f5379b8bbd386a4e3c3f7972f7344a 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5c1e7d5f-0d09-45fd-a8ae-69827ac3a174_rw_1920.jpg?h=722c659e0a7f8e0dd0ebbe1c08dcf777 1366w,"
+             data-sizes="(max-width: 1366px) 100vw, 1366px"
+             width="1366"
+             height="0"
+             style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 0px;
+  padding-bottom: 20px;
+  width: 60%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2c7b37a6-3daf-45f9-945b-ecc1b0e53216.png?h=2ced11fffff05cca673c4a85316995e7">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2c7b37a6-3daf-45f9-945b-ecc1b0e53216_rw_1200.png?h=815a0925a8d40ffa6107baa11edf9ea9"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2c7b37a6-3daf-45f9-945b-ecc1b0e53216_rw_600.png?h=99f6a77ac4c1a1e76c6c9cb971d60e24 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2c7b37a6-3daf-45f9-945b-ecc1b0e53216_rw_1200.png?h=815a0925a8d40ffa6107baa11edf9ea9 1155w,"
+             data-sizes="(max-width: 1155px) 100vw, 1155px"
+             width="1155"
+             height="0"
+             style="padding-bottom: 59.5%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: 36px;
+  padding-bottom: 20px;
+  width: 50%;
+  float: center;
+  clear: both;
+">
+
+  
+ 
+  
+     <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2401f184-197d-4635-ab2a-b61176b1e29f.png?h=e160ffe74af59b247a01a9385365670e">
+           <img
+             class="js-lazy e2e-site-project-module-image"
+             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2401f184-197d-4635-ab2a-b61176b1e29f_rw_1920.png?h=8637381ff7ddf771fc8ffa9fd7efd820"
+             data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2401f184-197d-4635-ab2a-b61176b1e29f_rw_600.png?h=90859989ab70c209ee918d200ee79494 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2401f184-197d-4635-ab2a-b61176b1e29f_rw_1200.png?h=7ed885e8efb9e1ef57d951e298d886a7 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/2401f184-197d-4635-ab2a-b61176b1e29f_rw_1920.png?h=8637381ff7ddf771fc8ffa9fd7efd820 1588w,"
+             data-sizes="(max-width: 1588px) 100vw, 1588px"
+             width="1588"
+             height="0"
+             style="padding-bottom: 104.83%; background: rgba(0, 0, 0, 0.03)"
+             
+           >
+     </div>
+  
+
+    <div class="project-module module-caption-container js-caption-container align-left">
+      <div class="rich-text module-caption js-text-editable"><div style="text-align:center;"><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#787878;"><br></span></span></div><div style="text-align:center;"><span style="font-family:fbft;font-weight:500;"><span class="texteditor-inline-color" style="color:#787878;">First floor Plan</span></span></div></div>
+    </div>
+</div>
+
+              
+              
+              
+              
+              
+              
+              
+              
+          </div>
+        </div>
+      </div>
+    </section>
+          <section class="other-projects js-editable-target editable" data-context="page.page.other_pages" data-hover-hint="otherPages">
+            <div class="title-wrapper">
+              <div class="title-container">
+                  <h3 class="other-projects-title preserve-whitespace">You may also like</h3>
+              </div>
+            </div>
+            <div class="project-covers">
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="street-children.html" data-context="pages" data-identity="id:p5f0cb59c6628aee362fc925157381a3fd4a0ebdbdf5601b54e026" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x32.jpg?h=2b0aee5fa5e20087bb8aa3fda88576cf"
+              data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x2022.jpg?h=60068961c993f6545f4fa91ea6420712"
+              data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x640.jpg?h=7e92115934f100f12a7f5b425b7b6283 640w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x1280.jpg?h=9a30934a84c0f44d9148d4f5a287e69e 1280w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x1366.jpg?h=4da4c191cbf5db2c74b42aa41654ebc9 1366w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x1920.jpg?h=091fb3ca1794374d0ea54a6ef2bb8db4 1920w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x2560.jpg?h=4fca50307a96b039a31b7cc5c1f5c617 2560w, https://pro2-bar-s3-cdn-cf3.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/4d084879-5b8e-433d-a501-bddcc52c2744_rwc_1112x496x2022x1517x2022.jpg?h=60068961c993f6545f4fa91ea6420712 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">StreetCraft</div>
+                            <div class="date">2019</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="costudy.html" data-context="pages" data-identity="id:p5f140916a463df24f2c2c27fff9becdf09c5ceb8ae29d88aa8220" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x32.jpg?h=8262d610258710ea182705bf86fc3cfc"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x4266.jpg?h=65b564a49b04725c8ef90adde7fcb11e"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x640.jpg?h=3fe212ef739ff5c264872ff9a61b486b 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x1280.jpg?h=06169fa241957159aa3f4c3bb6d97b9c 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x1366.jpg?h=0997b32eb9667efadf6f3906c06729a7 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x1920.jpg?h=f7e029fe8ba079e249b11cdacaeb0e98 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x2560.jpg?h=4936f52994aabf923d1e75e22b0c5a09 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/fbe1ce77-75b1-4d47-a251-6ad48902473a_rwc_659x0x4266x3200x5120.jpg?h=7e30d86c79bf4124d34fde7c7fdc7115 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">CoStudy</div>
+                            <div class="date">2020</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="fss.html" data-context="pages" data-identity="id:p5f0cb147c1e8cb641a0b12cecbe798360160de0a07d2871493822" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x32.jpg?h=f3066248c18d96ec856f14a5b7acee0d"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x640.jpg?h=0a90f7239b8f65bfeb15517e21c8b59e 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/cfcaaa88-0f5b-43c7-85ba-eb259996e57d_rwc_0x264x1140x855x1140.jpg?h=3a2c5b09269ddd0f517ff17d6a7faa11 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">The Surface Active Structure</div>
+                            <div class="date">2019</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="meloma.html" data-context="pages" data-identity="id:p5f0cb37e84f9abe11ea5a68079789e1a505ca75965f299fe4ef8d" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x32.jpg?h=d0070a2d08c4824a86c8a9a4a1f706c0"
+              data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_car_4x3.jpg?h=d30a8a5145b83709029f767e888ad3fb"
+              data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x640.jpg?h=f0ffeda35d61f041fd210d7edff14513 640w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x1280.jpg?h=ca10300c356e6d89d0b99d974faaeca1 1280w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x1366.jpg?h=6e40472903728a801165adf5b786fdc6 1366w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x1920.jpg?h=114e0af884133d5cafdc3f4283568ae7 1920w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x2560.jpg?h=d2a3022e762463783a1a36a272745c81 2560w, https://pro2-bar-s3-cdn-cf4.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/5f92d63c-b746-4d3a-8a24-cca1b216d8d5_carw_4x3x5120.jpg?h=54afd3b8cf5ba79bf84e56ae4c4b44d6 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">MeloMa</div>
+                            <div class="date">2018</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="divar.html" data-context="pages" data-identity="id:p5f0ca5aed47781cd8bf56fe08a0d136cd7da2e46bdfa1b4c964b6" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x32.jpg?h=3ac53123abd036faff9ef9664e1ef053"
+              data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37"
+              data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x640.jpg?h=fd46d0981bea8d26a0026385d877864d 640w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37 1280w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37 1366w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37 1920w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37 2560w, https://pro2-bar-s3-cdn-cf1.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/ce5b7a24-7d8b-4ea1-a524-d7f23592cd34_rwc_0x166x1112x834x1112.jpg?h=a6fa283e96976a8b4511dc9e1871af37 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">The Wind-Wall</div>
+                            <div class="date">2016</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="js-editable-target editable project-cover js-project-cover-touch hold-space" href="augmented-virtuality.html" data-context="pages" data-identity="id:p5f0cb5457b35d808ffa242bbd5b4af7571a57ed54a2c971ed58b5" data-section="Page Info">
+                      <div class="cover-image-wrap">
+                        <div class="cover-image">
+                            <div class="cover cover-normal">
+
+            <img
+              class="cover__img js-lazy"
+              src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x32.jpg?h=1fc48451a0830ddac3763b4d5123a745"
+              data-src="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_car_4x3.jpg?h=26f16f1750e2c7b5ecd58e33f24abdd9"
+              data-srcset="https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x640.jpg?h=72f93288bf1b9889b7dfebd4e44b7724 640w, https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x1280.jpg?h=f286404a6821b16f54a934ddfa82b2e3 1280w, https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x1366.jpg?h=7a9675f2f2a45b38d7218a539b07d09d 1366w, https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x1920.jpg?h=7c55babf7b5683d35507aa6df493b9b7 1920w, https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x2560.jpg?h=4c7c560541fa193c5140dc05fc21804c 2560w, https://pro2-bar-s3-cdn-cf.myportfolio.com/4b02e1e7-f75a-45a2-9baf-b455fc0eb876/b2213d28-5f9c-49f4-b492-b4b5e242a20d_carw_4x3x5120.jpg?h=0ed001621a99f848dabf335de678e7e2 5120w"
+              data-sizes="(max-width: 540px) 100vw, (max-width: 768px) 50vw, 100vw"
+            >
+                                      </div>
+                        </div>
+                      </div>
+                    <div class="details-wrap">
+                      <div class="details">
+                        <div class="details-inner">
+                            <div class="title preserve-whitespace">Augmented virtuality</div>
+                            <div class="date">2020</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+          </section>
+        <section class="back-to-top js-editable-target editable" data-hover-hint="backToTop">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-editable-target editable js-back-to-top back-to-top-fixed-with-panel" data-hover-hint="backToTop" data-hover-hint-placement="top-start" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+              <footer class="site-footer js-editable-target editable" data-hover-hint="footer">
+                <div class="footer-text">
+                  
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"296353545","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQ0tXXV0MUVdCAAgPUQ0WW0lEDUVCVg4OD19NW1ld","queueTime":0,"applicationTime":7,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5f0cb638d4162c8427c9a9c08f50c588c65a0b463a1510ac21c1f","theme":{"name":"andreas"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":true,"color":{"opacity":0.94,"hex":"#fff"}},"cookie_banner":{"enabled":false}};</script>
+  <script type="text/javascript" src="site/translations-cb=60244d56aa9a6a5886e0272e6ea0d3cc6dfd5710"></script>
+  <script type="text/javascript" src="dist/js/main-cb=60244d56aa9a6a5886e0272e6ea0d3cc6dfd5710.js"></script>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://saminfarajian.myportfolio.com/sitemap.xml
