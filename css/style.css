@@ -10870,6 +10870,10 @@ a.text-dark:focus {
     display: none;
   }
 
+  .navbarf {
+    display: flex;
+  }
+
   .badge {
     border: 1px solid #000;
   }
@@ -11189,5 +11193,71 @@ h6,
   display: grid;
   place-items: center;
   height: 100 vm;
+
+}
+
+.Intro {
+  margin-top: 150px;
+
+
+
+}
+
+.imgCover {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+
+
+}
+
+.GeneralInfo {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+
+
+
+}
+
+.Style1 {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 40px;
+}
+
+.Style2 {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 40px;
+}
+
+
+
+#Gallery {
+  margin-top: 70px;
+  display: block;
+
+  width: 20%;
+
+
+}
+
+#Gallery2 {
+  margin-top: 40px;
+
+
+  width: 44%;
+
 
 }
