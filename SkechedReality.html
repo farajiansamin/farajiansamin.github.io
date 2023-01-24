@@ -39,9 +39,13 @@
         <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
             <div class="navbar-nav m-auto py-0">
 
-                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="/index.html" class="nav-item nav-link">About</a>
 
 
+                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+
+
+                <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
 
         </div>
@@ -49,59 +53,50 @@
     <!-- Navbar End -->
     <div>
         <div class="Intro">
-
             <iframe style="display: block; margin: auto;" width="1120" height="630"
-                src="https://www.youtube.com/embed/R98vR3tukMY" title="YouTube video player" frameborder="0"
+                src="https://www.youtube.com/embed/xy-IeVgoEpY" title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
 
+
+
             <div class="GeneralInfo" style="margin-top: 100px;">
 
-                <h3>Awarded The Best Project in <a href="https://uist.acm.org/uist2021/">UIST</a> Student
-                    Innovation Contest </h3>
+
                 <h3><a href="https://uist.acm.org/uist2021/">The ACM Symposium on User Interface Software and Technology
-                        (UIST 2021)</a></h3>
-                <p> Samin Farajian, Hiroki Kaimoto, Ryo Suzuki</p>
-                <a style="color: #0BCEAF; font-size: medium; font-weight: 500;"
-                    onclick="window.open('img/SwarmFabrication/Swarm Fabrication.pdf')">Download
-                    PDF</a>
+                        (UIST 2022)</a></h3>
+
+                <p> Hiroki Kaimoto, Kyzyl Monteiro, Mehrad Faridan, Jiatong Li, Samin
+                    Farajian, Yasuaki Kakehi, Ken Nakagaki, Ryo Suzuki </p>
+                <a style="margin-bottom: 100px;" href="https://dl.acm.org/profile/99660630062"> ACM Link</a>
 
 
 
-
-
-
-                <h3 style="margin-top: 100px;"> Problem Statement</h3>
-                <p>Today’s digital fabrication machines are not very flexible. For example, the users cannot easily
-                    bring 3D printers with them and print
-                    an object wherever they want. In addition, the size and functionality
-                    is mostly static—it is often difficult to change the size of printers or
-                    modify it from 3D printers to laser cutters.</p>
-                <img class="imgCover" src="img/SwarmFabrication/Cover.png"
+                <h3 style="margin-top: 100px;"> Abstract</h3>
+                <p>This paper introduces Sketched Reality, an approach that com- bines AR sketching and actuated
+                    tangible user interfaces (TUI) for bi-directional sketching interaction. Bi-directional sketching
+                    enables virtual sketches and physical objects to "affect" each other through physical actuation and
+                    digital computation. In the existing AR sketching, the relationship between virtual and physical
+                    worlds is only one-directional --- while physical interaction can affect virtual sketches, virtual
+                    sketches have no return effect on the physical objects or environment. In contrast, bi-directional
+                    sketching interaction allows the seamless coupling between sketches and actuated TUIs.</p>
+                <img class="imgCover" src="img/SkechedReality/1.png"
                     style="width: 60%; margin-bottom: 50px;margin-top: 50px;">
 
-                <p>The current limitations
-                    of these fabrication machines stem from the fixed and inflexible
-                    form factors of these devices—the users cannot easily construct or
-                    decompose each element of the machines such as motors, extruders,and gears. Therefore, the current
-                    fabrication machines are limited
-                    in portability, deployability, scalability, and reconfigurability</p>
+                <p>In this paper, we employ tabletop-size small robots (Sony Toio) and an iPad-based AR sketching tool
+                    to
+                    demonstrate the concept. In our system, virtual sketches drawn and simulated on an iPad (e.g.,
+                    lines, walls, pendulums, and springs) can move, actuate, collide, and constrain physical Toio
+                    robots, as if virtual sketches and the physical objects exist in the same space through seamless
+                    coupling between AR and robot motion. This paper contributes a set of novel interactions and a
+                    design space of bi-directional AR sketching. We demonstrate a series of potential applications, such
+                    as tangible physics education, explorable mechanism, tangible gaming for children, and in-situ robot
+                    programming via sketching</p>
                 <br></br>
-                <p style="font-weight:500; color: #343a40">To better understand the problem, you can consider the
-                    following user scenarios:
-                <p>1. Maria is a researcher and her research interest is fabrication, every day she needs to come to the
-                    lab University to print models in different sizes and materials, with the spread of covid now she
-                    needs to work from home but she can't move different heavy fabrication machines into her house.</p>
-                <p>2. A remote city and out-of-reach area in Iran is jolted by an earthquake, there are many injured
-                    people that need instant help.
-                    A flexible fabrication machine could be very helpful to create instant shelter for people and
-                    fabricate medical tools( first aid tools) but transporting heavy and cumbersome fabrication machines
-                    to the area is very difficult, takes time, and of course dangerous.</p>
-                <p>3. Sara is a jewelry designer that backpacks a lot, she makes a living by selling jewelry and wishes
-                    she had a portable and flexible 3D printer that she could bring with her wherever she wants when she
-                    is on a journey.</p>
-
-
+                <img class="imgCover" src="img/SkechedReality/2.jpeg"
+                    style="width: 100%; margin-bottom: 50px;margin-top: 50px;">
+                <img class="imgCover" src="img/SkechedReality/3.png"
+                    style="width: 100%; margin-bottom: 50px;margin-top: 100px;">
 
 
 
@@ -112,25 +107,16 @@
 
 
 
-                <h3> Introduction</h3>
-                <p>Swarm Fabrication is a novel concept of creating ondemand, scalable, and reconfigurable fabrication
-                    machines made of
-                    swarm robots. We present ways to construct an element of fabrication machines, such as motors,
-                    elevator, table, feeder, and extruder,
-                    by leveraging toio robots and 3D printed attachments. By combining these elements, we demonstrate
-                    constructing a X-Y-Z plotter
-                    with multiple toio robots, which can be used for drawing plotters
-                    and 3D printers. We also show the possibility to extend our idea
-                    to more general-purpose fabrication machines, which include 3D
-                    printers, CNC machining, foam cutters, line drawing devices, pick
-                    and place machines, 3D scanning, etc. Through this, we draw a
-                    future vision, where the swarm robots can construct a scalable
-                    and reconfigurable fabrication machines on-demand, which can be
-                    deployed anywhere the user wishes. We believe this fabrication
-                    technique will become a means of interactive and highly flexible
-                    fabrication in the future.
+                <h3> Implementation</h3>
+                <p>To demonstrate our concept, we built SketchedActuation, a sys-
+                    tem that consists of small tabletop robots and laser projector pro-
+                    jection mapping. For the small tabletop robots, we use Sony Toio,
+                    the mobile remote controllable robot that can track and feedback
+                    their position and orientation. We use Nebula Capsule, the mobile
+                    laser projector, for the projection mapping. We combined this two
+                    basic hardware and set the Virtual-Physical mixed environment.
                 </p>
-                <img src="img/SwarmFabrication/3d-printing.png"
+                <img src="img/SkechedReality/e7176319-ad65-4602-8dda-244832974b52_rw_1920.jpeg"
                     style="width: 70%; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px; margin-top: 100px;">
 
             </div>
