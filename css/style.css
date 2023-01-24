@@ -11271,6 +11271,7 @@ h6,
 }
 
 .DemoVideo {
+  justify-content: center;
   display: block;
   margin: auto;
 }
