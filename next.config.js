@@ -1,10 +1,7 @@
-const nextConfig = { 
-    output: "export",  // <=== enables static exports
-    
-    
+const nextConfig = {
+    basePath: "/2048-in-react",
+    output: "export",
     reactStrictMode: true,
+  };
   
-    // Add basePath
-     basePath: '/github-pages',}
-
-module.exports = nextConfig
+  module.exports = nextConfig;
