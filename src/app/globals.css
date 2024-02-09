@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  background-color: #E8E6DA;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+}
