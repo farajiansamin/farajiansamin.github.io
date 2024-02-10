@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
-import Link from "next/link";
+
 import AnimatedSVGComponent from "./Animation";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
@@ -11,16 +9,17 @@ import LinkedinIcon from "../../../public/linkedin-icon.svg";
 
 const HeroSection = () => {
   return (
-    <section className=" flex flex-row sm:flex-col lg:pt-10">
+    <section className=" w-full lg:pt-20  flex flex-col pl-6 sm:flex-row h-screen font-mono  ">
     
       <AnimatedSVGComponent />
-      <div className="flex  flex-col  py-72  sm:py-40">
+      <div className="flex lg:pt-80 flex-col pt-12  ">
         <p className=" text-center font-mono">
           {" "}
-          I enjoy making things
+          I find joy tackling challenges. discovering new solutions , and learning new things.<br></br>
+          This pushes me to explore beyond the usual limits and constantly seek out new possibilities. 
         </p>
         
-        <div className="socials py-4 flex flex-row gap-2 sm:justify-center">
+        <div className=" flex socials py-4  flex-row gap-2 justify-center">
       <a href="https://github.com/farajiansamin" target="_blank" rel="noopener noreferrer">
         <Image src={GithubIcon} alt="Github Icon"  />
       </a>

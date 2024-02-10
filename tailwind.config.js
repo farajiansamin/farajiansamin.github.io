@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "paper-texture": "url('/images/beige-paper.png')",
+        
       },
     },
     
@@ -37,11 +37,7 @@ module.exports = {
 
           error: "#ff3d78",
 
-          body:{
-           
-              'background-color': '#e8e6da'
-              
-            },
+          
           
         },
       },

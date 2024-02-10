@@ -130,8 +130,8 @@ const AnimatedSVGComponent = () => {
   }, []);
 
   return (
-    <div style={styles.body}>
-      <svg className="svg" width="540" height="565.71424" viewBox="0 0 580 800">
+    <div>
+      <svg className="w-full" width="540" height="565.71424" viewBox="0 0 580 800">
         <g className="isolate">
           {/* T Paths */}
           <path
