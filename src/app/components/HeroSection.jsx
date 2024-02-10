@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section className=" w-full lg:pt-20  flex flex-col pl-6 sm:flex-row h-screen font-mono  ">
     
       <AnimatedSVGComponent />
-      <div className="flex lg:pt-80 flex-col pt-12  ">
+      <div className="flex pb-10 lg:pt-80 flex-col   ">
         <p className=" text-center font-mono">
           {" "}
           I find joy tackling challenges. discovering new solutions , and learning new things.<br></br>
