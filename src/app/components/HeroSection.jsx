@@ -11,15 +11,16 @@ import LinkedinIcon from "../../../public/linkedin-icon.svg";
 
 const HeroSection = () => {
   return (
-    <section className=" flex flex-row h-screen lg:pt-10">
+    <section className=" flex flex-row sm:flex-col lg:pt-10">
     
       <AnimatedSVGComponent />
-      <div className="flex  py-72 flex-col">
+      <div className="flex  flex-col  py-72  sm:py-40">
         <p className=" text-center font-mono">
           {" "}
           I enjoy making things
         </p>
-        <div className="socials py-4 flex flex-row gap-2">
+        
+        <div className="socials py-4 flex flex-row gap-2 sm:justify-center">
       <a href="https://github.com/farajiansamin" target="_blank" rel="noopener noreferrer">
         <Image src={GithubIcon} alt="Github Icon"  />
       </a>
