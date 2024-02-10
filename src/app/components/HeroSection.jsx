@@ -15,8 +15,8 @@ const HeroSection = () => {
       <div className="flex pb-20 lg:pt-80 flex-col   ">
         <p className=" text-center font-mono">
           {" "}
-          I find joy tackling challenges. discovering new solutions , and learning new things.<br></br>
-          This pushes me to explore beyond the usual limits and constantly seek out new possibilities. 
+          I find joy tackling challenges, discovering new solutions, and learning new things.<br></br>
+          
         </p>
         
         <div className=" flex socials py-4  flex-row gap-2 justify-center">
